@@ -34,7 +34,7 @@
         }
 
         .envelope.open {
-            transform: translateY(-50px); /* Effect when opening the envelope */
+            transform: translateY(-50px);
         }
 
         .envelope::before {
@@ -50,7 +50,7 @@
         }
 
         .envelope.open::before {
-            transform: translateY(50px); /* Effect to move the top of envelope when opened */
+            transform: translateY(50px);
         }
 
         .letter {
@@ -65,12 +65,12 @@
             padding: 15px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
-            transform: translateY(-100%); /* Hidden when closed */
+            transform: translateY(-100%);
             transition: transform 0.5s ease;
         }
 
         .envelope.open .letter {
-            transform: translateY(0); /* Show letter when envelope is opened */
+            transform: translateY(0);
         }
 
         .letter::before {
