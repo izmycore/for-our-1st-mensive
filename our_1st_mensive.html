@@ -3,72 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amplop dan Surat</title>
+    <title>1st Mensiversary</title>
     <style>
         body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #fef6f6;
+            margin: 0;
+            padding: 20px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f8f8f8;
-        }
-
-        .container {
-            position: relative;
-            width: 350px;
-            height: 250px;
+            min-height: 100vh;
         }
 
         .envelope {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            border: 2px solid #c00;
-            border-radius: 10px;
+            width: 600px;
+            height: 400px;
+            position: relative;
+            border: 2px solid #ff6f61;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(255, 111, 97, 0.2);
+            margin-bottom: 20px;
         }
 
-        .envelope::before {
-            content: "";
+        .envelope-top {
+            width: 100%;
+            height: 120px;
+            background-color: #ff6f61;
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: #c00;
-            clip-path: polygon(50% 0, 100% 100%, 0% 100%);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+            transition: all 0.6s ease;
+            z-index: 2;
         }
 
-        .letter {
-            position: absolute;
-            top: 10%;
-            left: 10%;
-            width: 80%;
-            height: 70%;
-            background: white;
-            border: 2px solid #c00;
-            border-radius: 5px;
-            padding: 15px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        .envelope-body {
+            padding: 30px;
+            display: none;
+            overflow-y: auto;
+            max-height: 340px;
+        }
+
+        .open .envelope-body {
+            display: block;
+        }
+
+        .letter-content {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            line-height: 1.8;
+        }
+
+        h1 {
+            color: #ff6f61;
             text-align: center;
+            margin-top: 0;
+            font-size: 28px;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
-        .letter::before {
-            content: "❤";
-            font-size: 20px;
-            color: #c00;
-            position: absolute;
-            top: 10px;
-            left: 10px;
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #444;
+            text-align: justify;
         }
+
+        .signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 30px;
+            color: #ff6f61;
+            font-size: 18px;
+        }
+
+        .toggle-btn {
+            padding: 12px 25px;
+            background-color: #ff6f61;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(255, 111, 97, 0.3);
+        }
+
+        .toggle-btn:hover {
+            background-color: #ff4a3a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 111, 97, 0.4);
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="envelope"></div>
-        <div class="letter">Tuliskan pesanmu di sini!</div>
+    <div class="envelope" id="envelope">
+        <div class="envelope-top"></div>
+        <div class="envelope-body">
+            <div class="letter-content">
+                <h1>✨ Heffy hamfy 1st Mensiversary, Teerak! ✨</h1>
+                <p>
+                    Hai sayangku, hari ini adalah hari yang sangat spesial buat kita berdua. Udah sebulan kita lalui bersama, 
+                    dan setiap harinya terasa seperti hadiah yang tak ternilai buatku. Dari awal kita kenal, aku nggak pernah 
+                    membayangkan bisa menemukan seseorang yang bisa bikin aku sebahagia ini. Kamu bukan cuma sekedar pacar, 
+                    tapi kamu adalah orang yang selalu bisa bikin aku tersenyum, tempat aku berbagi cerita, dan orang yang selalu 
+                    berusaha jadi yang terbaik buatku.
+                </p>
+                <p>
+                    Tau enggak? Setiap pagi aku bangun dengan senyuman karena tau aku bisa ngobrol sama kamu. Setiap chat dari kamu, 
+                    setiap moment yang kita lakukan, bahkan setiap emoji dan stiker random yang kamu kirim, selalu bisa bikin hariku lebih cerah. 
+                    Ke-random-an kita berdua itu yang bikin hubungan kita spesial dan penuh warna. Dari jokes-jokes receh kita, 
+                    sampai obrolan serius tentang masa depan, semuanya jadi momen berharga yang akan selalu aku ingat.
+                </p>
+                <p>
+                    Kamu tau enggak? Aku suka banget sama caramu yang selalu bisa bikin aku ketawa bahkan di saat-saat aku lagi down. 
+                    Aku suka sama perhatian kecilmu yang selalu ingetin aku makan, atau nanyain kabar ku tiap hari. Dan yang paling aku suka, 
+                    kamu selalu ada buat aku, dalam keadaan apapun.
+                </p>
+                <p>
+                    Di bulan pertama ini, aku belajar banyak tentang arti sayang yang sebenernya. Sayang itu bukan cuma tentang kata-kata manis, 
+                    tapi juga tentang kesabaran, pengertian, dan ketulusan. Dan kamu udah ngajarin aku semua itu. Aku berharap kita bisa terus 
+                    tumbuh bareng, belajar bareng, dan bikin banyak kenangan indah bersama.
+                </p>
+                <p>
+                    Terima kasih udah mau jadi bagian dari hidupku. Terima kasih udah mau terima aku apa adanya. Dan juga terima kasih udah mau 
+                    berbagi cerita, tawa, dan kebahagiaan bersama. Aku janji akan selalu berusaha jadi yang terbaik buat kamu, 
+                    seperti kamu yang selalu berusaha jadi yang terbaik buatku.
+                </p>
+                <div class="signature">
+                    Dengan segenap cinta dari Bola Ubi,<br>
+                    💝 Ayas Creevey 💝
+                </div>
+            </div>
+        </div>
     </div>
+    <button class="toggle-btn" onclick="toggleEnvelope()">Buka Envelope</button>
+
+    <script>
+        function toggleEnvelope() {
+            const envelope = document.getElementById('envelope');
+            const envelopeTop = document.querySelector('.envelope-top');
+            
+            envelope.classList.toggle('open');
+            
+            if (envelope.classList.contains('open')) {
+                envelopeTop.style.clipPath = 'polygon(50% 0, 0% 0, 100% 0)';
+            } else {
+                envelopeTop.style.clipPath = 'polygon(50% 0, 0% 100%, 100% 100%)';
+            }
+        }
+    </script>
 </body>
 </html>
